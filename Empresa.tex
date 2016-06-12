@@ -12,6 +12,8 @@
 \usepackage{subfig}
 \usepackage{anysize}
 \usepackage{wrapfig}
+\usepackage{pgfplots}
+\usepackage{tikz}
 
 \marginsize{2cm}{2cm}{2cm}{2cm}
 
@@ -30,6 +32,27 @@
 
 \theoremstyle{definition_wo_parentheses}
 \newtheorem{definicion}{Definición}[section]
+
+\usetikzlibrary{arrows,positioning} 
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
 
 \begin{document}
 \maketitle
@@ -613,5 +636,97 @@ Los clientes pueden amenazar con forzar la bajada de precios, exigir una calidad
 \subsubsection{Poder negociador de los proveedores}
 
 Los clientes pueden amenazar con subir los precios, bajar la calidad, variar las condiciones del servicio o la negociación colectiva mediante acuerdos o uniones entre ellos si el sector está mue fraccionado. Otras medidas son que no hayan productos sustitutivos, la importancia relativa del producto, la integración hacia adelante, el número de proveedores, o los costes de cambio.
+
+\section{Tema 7: La dirección estratégica}
+
+\begin{definicion}[Dirección estratégica]
+	Proceso de puesta en marcha y desarrollo de todos ls potenciales de una empresa, que le aseguren una supervivencia a largo plazo y a ser posible de manera beneficiosa. 
+\end{definicion}
+
+\begin{definicion}[Ventaja competitiva]
+	Plus de superioridad con respecto a otras empresas que permite vender más. Se puede conseguir mediante diferenciación, enfoque o liderazgo en costes.
+\end{definicion}
+
+\paragraph{Sostenibilidad de la ventaja competitiva} Para la sostenibilidad de la ventaja se requieren barreras a la imitación; barreras que impiden un posterior equilibrio de renta renta entre las empresas individuales. Para que exista ventaja competitiva la información y la disponibilidad de recursos son mecanismos que no pueden estar al alcance de todos. \\
+
+Hay que considerar el papel de los recursos específicos de las empresas: 
+\begin{itemize}
+\item Surgimiento de ventaja competitiva ante cambios en el entorno
+\item Sostenimiento a través del tiempo por la protección de los mecanismos de aislamiento (información y disponibilidad de recursos).
+\end{itemize}
+
+\begin{definicion}[Diferenciación del producto]
+Persigue crear una percepción superior del producto o servicio para el cliente, haciendo que sea percibido como único en el mercado.
+\end{definicion}
+
+La diferenciación se considera como la barrera protectora contra la competencia debido a la lealtad de marca. Provoca una menor sensibilidad al precio. Diferenciarse significa involucrarse en actividades costosas como la investigación, el diseño del producto, los materiales de alta calidad o incrementar el servicio al cliente.
+
+\begin{definicion}[Liderazgo en costes] 
+	Estrategia mediante la que la empresa trata de tener costes inferiores a los de sus competidores para un producto o servicio semejante o comparable en calidad
+\end{definicion}
+
+Exige un diseño del producto que facilite su fabricación. Se ve favorecido por las economías de escalas. Se suelen dedicar a los segmentos más grandes de clientes para asegurar un gran volumen de ventas. Podría implicar además grandes inversiones de capital en tecnología punta, precios agresivos y reducir los márgenes de utilidad.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.5\textwidth]{matrizEstGenericas}
+ \caption{Matriz de estrategias genéricas}
+\end{figure}
+
+
+\begin{tikzpicture}[y=.3cm, x=.3cm,font=\normalsize]
+
+\node[draw] (LC) at (10,0) {Liderazgo en costes};
+\node[draw] (DP) at (35,0) {Diferenciación del producto};
+
+\node[draw] (E) at (0,10) {Eficiencia}
+	edge[pil] (LC.north);
+	
+\node[draw] (C) at (13,10) {Calidad}
+	edge[pil] (DP.north)
+	edge[pil] (LC.north);
+\node[draw] (I) at (25,10) {Innovación}
+	edge[pil] (DP.north)
+	edge[pil] (LC.north);
+	
+\node[draw] (SC) at (40,10) {Satisfacción del cliente}
+	edge[pil] (DP.north);
+\end{tikzpicture}
+
+
+\paragraph{Diferenciación de productos} La ventaja competitiva en diferenciación persigue la identificación del \textit{producto} o servicio que ofrece la empresa, o de alguno de sus elementos como la atención al cliente, la calidad, etc.,haciendo que sea percibido como único en el \textit{mercado}. De esta forma, los clientes están dispuestos a pagar más para obtener un producto (o servicio) de una \textit{empresa} que otra.
+
+\paragraph{Aspectos de diferenciación en productos}
+\begin{itemize}
+\item Aspecto físico. Ejemplo: Jaguar.
+\item Rendimiento. Ejemplo: Adidas.
+\item Complementos. Ejemplo: Chicco.
+\item Intangibles. Ejemplo: Apple.
+\end{itemize}
+
+\paragraph{Aspectos de diferenciación en el mercado}
+\begin{itemize}
+\item Enfoque. Ejemplo: El Corte Inglés.
+\item Servir mercados especiales. Ejemplo: Puleva.
+\end{itemize}
+
+\paragraph{Aspectos de diferenciación de empresas}
+\begin{itemize}
+\item Imagen de marca. Ejemplo: Lacoste.
+\item Reputación. Ejemplo: Bayer.
+\item Identificación de valores. Ejemplo: Cruz Roja.
+\item Guías de exclusividad. Ejemplo: Grifols, Vircell.
+\end{itemize}
+
+\paragraph{Liderazgo en costes} Una empresa tiene ventaja en costes cuando tiene costes inferiores a los de sus competidores para un producto o servicio semejante o comparable en calidad. Mediante ella, la empresa trata de obtener unos costes lo más reducidos posible, lo que la situará en ventaja frente a sus competidores (bajar precio), proveedores (absorber incrementos de precios) y clientes (obtener más beneficios).
+
+\paragraph{El reloj estratégico} Surgen limitaciones en el siglo XXI, pues no sólo una empresa puede ser líder en costes, ni menores costes significa mejor calidad. Tampoco son equivalentes un mayor precio y diferenciación. Por tanto surge el reloj estratégico para representar las posibles estrategias. Una empresa puede variar sus estratégicas según las circunstancias. 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.5\textwidth]{relojEstrategico}
+ \caption{Reloj estratégico}
+\end{figure}
+
 
 \end{document}
